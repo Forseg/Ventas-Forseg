@@ -1,0 +1,226 @@
+
+/* ---- GENERALES ---- */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--cfondo);
+    font-family: sans-serif;
+  }
+  
+  .container {
+    /* border: 3px solid red; */
+    max-width: 90%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  header {
+    width: 100%;
+    background-color: #c7a17a;
+    padding: 3px 0;
+  }
+  
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:  0 20px;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .top-nav li {
+   
+    margin-right: 20px; 
+  }
+  
+  .top-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px; 
+  }
+  
+  .container-icon {
+    background-color: antiquewhite;
+
+  }
+  
+  .presentation {
+    background-color: #fff; 
+    text-align: center;
+    padding: 90px 0;
+  }
+  
+  .presentation h1 {
+    font-family: 'Nombre de la Fuente', sans-serif; 
+    font-size: 48px;
+    color: black;
+    margin: 0;
+    animation: bounce 1s infinite; 
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); 
+    }
+  }
+  
+  :root {
+    --cfondo: rgb(12, 15, 16);
+    --cfondoForm1: rgba(232, 242, 243, 0.993);
+    --cfondoForm2: rgb(236, 243, 244);
+    --cnegro: red;
+    --ctexto: rgb(14, 81, 88);
+    --ctextoDark: rgb(1, 35, 39);
+    --cblanco: white;
+    --error: rgb(184, 31, 31);
+  }
+  
+  [type="checkbox"] {
+    display: none;
+  }
+  
+  [type="checkbox"]:checked + label::before {
+    background: var(--cnegro);
+    transition: 0.5s;
+    transform: rotate(180deg);
+  }
+  
+  [type="checkbox"]:checked + label {
+    color: var(--cnegro);
+  }
+  
+  /* ---- FORMULARIO ---- */
+  
+  .form {
+    /* border: 3px solid green; */
+    border-top: 2px solid var(--cnegro);
+    max-width: 400px;
+    padding: 30px 50px;
+    margin: auto;
+    margin-top: 10px;
+    background: linear-gradient(
+      0deg,
+      var(--cfondoForm1) 0%,
+      var(--cfondoForm2) 50%
+    );
+  }
+  
+  .form-titulo {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+  }
+  
+  .form-input {
+    margin-bottom: 30px;
+  }
+  
+  .form-input label {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--ctexto);
+  }
+  
+  .form-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid var(--ctexto);
+  }
+  
+  .form-input input:focus + label {
+    font-weight: bold;
+    color: var(--cnegro);
+  }
+  
+  .form-termsAndConditions {
+    margin-left: 15px;
+    position: relative;
+    color: var(--ctexto);
+    font-size: 13px;
+  }
+  
+  .form-termsAndConditions label::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--cnegro);
+    position: absolute;
+    left: -14px;
+  }
+  
+  .form-boton input {
+    background: var(--cnegro);
+    color: var(--cblanco);
+    padding: 10px 50px;
+    font-size: 25px;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    border: none;
+  }
+  
+  .form-boton input:hover {
+    background: var(--ctextoDark);
+    transition: 0.5s;
+  }
+  
+  .mensajeError {
+    color: var(--error);
+    margin-top: 0px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .mensajeCorrecto {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .menu-options {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  
+  .menu-options li {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .menu-options li:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+
+  

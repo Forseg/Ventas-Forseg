@@ -1,0 +1,587 @@
+/* Estilos generales */
+body {
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el encabezado */
+.header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px; /* Aumenta un poco el padding */
+    width: 100%;
+}
+
+/* Estilos para la sección de información de contacto */
+.contact-info {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info span.text {
+    font-weight: bold;
+    font-size: 1.5em; /* Ajusta el tamaño del texto */
+    margin-bottom: 8px; /* Espacio adicional después de cada línea */
+}
+
+/* Estilos para el contenedor del logo */
+.container-logo {
+    text-align: right;
+    margin-left: auto;
+}
+
+.container-logo img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 25px;
+}
+/* ********************************** */
+/*               BANNER               */
+/* ********************************** */
+
+.banner {
+    background-image: linear-gradient(100deg, #000000, #00000020),
+                      url('img/equipos.png');
+    height: 45rem;
+    background-size: cover;
+    background-position: center;
+    animation: moveBackground 50s linear infinite; /* Agregar animación */
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 100% center;
+    }
+}
+
+.content-banner {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: 25rem 0;
+}
+
+.content-banner p {
+	color: var(--primary-color);
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+
+.content-banner h2 {
+	color: #fff;
+	font-size: 3.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.content-banner a {
+	margin-top: 2rem;
+	text-decoration: none;
+	color: #fff;
+	background-color: var(--primary-color);
+	display: inline-block;
+	padding: 1rem 3rem;
+	text-transform: uppercase;
+	border-radius: 3rem;
+}
+
+
+#carouselExample .carousel-inner img {
+	width: 100%;
+	max-height: 350px; /* Ajusta la altura máxima según tus necesidades */
+  }
+
+  
+
+/*MEJORES CATEGORIAS*/
+
+.container.top-categories {
+    margin-top: 50px;
+    padding: 0 20px; /* Agregar espacio lateral para pantallas más pequeñas */
+}
+
+.heading-1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem; /* Tamaño de fuente más grande para títulos en pantallas más pequeñas */
+}
+
+.container-categories {
+    display: flex;
+    flex-wrap: wrap; /* Para que las tarjetas se envuelvan en pantallas más pequeñas */
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.card-category {
+    position: relative;
+    overflow: hidden;
+    width: 32%; /* Ancho de la tarjeta */
+    height: 500px; /* Altura inicial de la tarjeta para pantallas más pequeñas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Alinear elementos en columna */
+    justify-content: space-between; /* Distribuir el espacio entre los elementos */
+
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 1200px) {
+    .card-category {
+        width: 48%; /* Dos tarjetas por fila en pantallas medianas */
+        height: 550px; /* Altura para pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-category {
+        width: 100%; /* Una tarjeta por fila en dispositivos móviles */
+        height: 450px; /* Altura para dispositivos móviles */
+    }
+}
+
+.card-category:hover {
+    transform: translateY(-10px);
+}
+
+.card-category img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.card-category p, .card-category a {
+    position: relative;
+    z-index: 1;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo más oscuro para mejorar la legibilidad */
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.2rem; /* Tamaño de fuente más grande para el texto */
+    margin-bottom: 15px;
+}
+
+.card-category a {
+    margin-top: 1px; /* Ajusta la posición del botón al fondo de la tarjeta */
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold; /* Texto más grueso para el botón */
+}
+
+.card-category a:hover {
+    text-decoration: underline;
+}
+
+
+/* MEJORES PRODUCTOS*/
+
+.container.top-products {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.heading-1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.container-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.container-options a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.container-options a.active,
+.container-options a:hover {
+    background-color: #f5f5f5;
+}
+
+.container-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border: 3px solid #12e695; /* Color de borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Para asegurar que el contenido no se desborde del contenedor con bordes redondeados */
+    transition: border-color 0.3s ease; /* Transición suave para cambios en el color del borde */
+
+}
+
+.card-product {
+    flex: 1;
+    min-width: 280px; /* Ancho mínimo de la tarjeta */
+    max-width: 32%; /* Ancho máximo para que se muestren 3 en una fila */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-product:hover {
+    border-color: #333; /* Color de borde más oscuro al pasar el cursor sobre el producto */
+}
+
+.container-img {
+    position: relative;
+    height: 300px; /* Altura fija para la imagen, puedes ajustar según tus necesidades */
+    overflow: hidden;
+}
+
+.container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.button-group {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.content-card-product {
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.stars {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .card-product {
+        max-width: 100%; /* Para que se muestre en toda la pantalla en dispositivos móviles */
+    }
+}
+
+
+/* Estilos para los textos de los productos */
+.content-card-product h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.content-card-product .negro-puro-grande,
+.content-card-product .lente {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 1.4rem;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #777;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+/* Estilos para estrellas de valoración */
+.stars i {
+    font-size: 1.5rem;
+    margin-right: 3px;
+}
+
+/* Estilos para el botón de añadir al carrito */
+.add-cart a {
+    background-color: #333;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-cart a:hover {
+    background-color: #555;
+}
+
+
+/* Estilos generales */
+
+.container {
+    padding: 50px 0;
+    text-align: center;
+    
+}
+
+.heading-1 {
+    margin-bottom: 30px;
+}
+
+.container-blogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card-blog {
+    flex: 0 0 calc(33.333% - 20px); 
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card-blog:hover {
+    transform: translateY(-10px);
+}
+
+.container-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.container-img:hover img {
+    transform: scale(1.05);
+}
+
+.button-group-blog {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.button-group-blog span {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-group-blog span:hover {
+    background-color: #f2f2f2;
+}
+
+.content-blog h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content-blog p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-read-more {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-read-more:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos Responsivos */
+
+@media (max-width: 992px) {
+    .card-blog {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-blog {
+        flex: 0 0 100%;
+    }
+
+    .button-group-blog {
+        display: none;
+    }
+}
+
+
+
+/* Estilos generales del footer */
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-footer {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.menu-footer {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Esto permite que los elementos se envuelvan cuando no hay suficiente espacio */
+}
+
+.contact-info,
+.information,
+.my-account,
+.newsletter {
+    flex: 1;
+    padding: 0 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    font-size: 0.9em;
+}
+
+ul li a:hover {
+    color: #fff;
+}
+
+button {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button span {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    background: url('path-to-your-icon.png') no-repeat center center;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    button {
+        padding: 8px 12px;
+        margin-top: 10px;
+        font-size: 0.8em;
+    }
+
+    button span {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons a {
+    color: #bbb;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #fff5f5;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+
+
+
+
+

@@ -1,0 +1,1108 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="img/empresa forsegg.jpg" type="image/x-icon">
+        <title>Productos</title>
+        <link rel="stylesheet" href="off/dozens.css">
+        <script src="off/dozens.js" async></script>
+        <link rel="stylesheet" href="categoria.html">
+        <link rel="stylesheet" href="cotizar.html">
+        <link rel="stylesheet" href="nosotros.html">
+        <link rel="stylesheet" href="productos.html">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">FORSEG</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left: 150px;">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="categoria.html">CATEGORIA</a>
+                      </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="nosotros.html">NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="productos.html">PRODUCTOS</a>
+                      </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="cotizar.html">COTIZAR</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Comprar por
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="orders.html">Cajones</a></li>
+                                <li><a class="dropdown-item" href="dozens.html">Docenas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>    
+        </nav>
+    </header>
+    <section class="second-presentation">
+        <h1 class="presentation-title">NUESTROS PRODUCTOS POR DOCENAS</h1>
+    </section>
+
+    <body>
+        <section class="sidebar">
+            <div class="nav-header">
+                <p class="logo">MENU</p>
+                <i class="bx bx-menu-alt-right btn-menu"></i>
+            </div>
+            <ul class="main-menu">
+                <li>
+                    <div id="dropdown-container">
+                        <button id="dropdown-btn" class="dropdown-btn">precios/docena</button>
+                        <ul id="dropdown-content" class="nav-links">
+                            <li data-category="todos"><a href="#">Todos</a></li>
+                            <li data-category="guantes"><a href="#">Guantes</a></li>
+                            <li data-category="mascarilla"><a href="#">Mascarillas</a></li>
+                            <li data-category="lentes"><a href="#">Lentes</a></li>
+                            <li data-category="chalecos"><a href="#">Chalecos</a></li>
+                            <li data-category="varas"><a href="#">Varas luminosas</a></li>
+                            <li data-category="lamparas"><a href="#">Lampara Mineras</a></li>
+                            <li data-category="cintas"><a href="#">Cintas Seguridad</a></li>
+                            <li data-category="viniles"><a href="#">Viniles</a></li>
+                            <li data-category="caretas"><a href="#">Caretas</a></li>
+                            <li data-category="adicionales"><a href="#">Productos adicionales</a></li>
+                        </ul>
+                    </div><br><br><br>
+                       
+                </li>
+            </ul>
+            <div class="theme-wrapper">
+                <i class="bx bxs-moon theme-icon"></i>
+                <button id="dark-theme-button" class="theme-btn">Color</button>
+            </div>  
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    setupDropdownMenu('dropdown-btn', 'dropdown-content');
+                    setupDropdownMenu('cajon-btn', 'cajon-content');
+            
+                    function setupDropdownMenu(btnId, contentId) {
+                        var btn = document.getElementById(btnId);
+                        var content = document.getElementById(contentId);
+                        btn.addEventListener('mouseover', function () {
+                            hideAllContents();
+                            content.style.display = 'block';
+                        });
+                        btn.addEventListener('click', function () {
+                            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+                            hideOtherContents(contentId);
+                        });
+                    }
+                    function hideAllContents() {
+                        var allContents = document.querySelectorAll('.nav-links');
+                        allContents.forEach(function (content) {
+                            content.style.display = 'none';
+                        });
+                    }
+                    function hideOtherContents(currentContentId) {
+                        var allContents = document.querySelectorAll('.nav-links');
+                        allContents.forEach(function (content) {
+                            if (content.id !== currentContentId) {
+                                content.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            </script>
+        </section>
+
+         <!------------------------------GUANTES DE PROTECCION X DOCENAS FORSEG-------------------------------------------------------->
+    <section class="contenedor" id="productList">
+        <div class="contenedor-items">
+            <div class="item" category="guantes" data-product-name="GUANTE DE CUERO ROJO PARA SOLDAR BLAZEFIRE 14 2020 2020"
+                data-imagen="img/guante-bazefire.jpeg">
+                <span class="titulo-item">GUANTE DE CUERO ROJO PARA SOLDAR BLAZEFIRE 14" 2020 2020</span>
+                <div class="centered-content"><span></span><br><span class="codigo"> HPI-6R-14</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guante-bazefire.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.18.79</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE CALIBRE 10 AMARILLO" data-imagen="img/guante_palma.jpeg">
+                <span class="titulo-item">GUANTE ANTICORTE CALIBRE 10 AMARILLO</span>
+                <div class="centered-content"><span> </span><br><span class="codigo">HPI-2242-GY-9</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/guante_palma.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.5.01</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE NEGRO WORKFLEX PU NEGRO T8" data-imagen="img/NEGROOO.webp">
+                <span class="titulo-item">GUANTE ANTICORTE NEGRO WORKFLEX PU NEGRO T8</span>
+                <div class="centered-content"><span> </span><br><span class="codigo">35-2NG8</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/NEGROOO.webp" alt="" class="img-item">
+                <span class="precio-item">S/.2.43</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE NEGRO WORKFLEX PU NEGRO T9" data-imagen="img/NEGROOO.webp">
+                <span class="titulo-item">GUANTE ANTICORTE NEGRO WORKFLEX PU NEGRO T9</span>
+                <div class="centered-content"><span> </span><br><span class="codigo">35-2NG8</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/NEGROOO.webp" alt="" class="img-item">
+                <span class="precio-item">S/.3.24</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE NEGRO WORKFLEX THIN NEOPRENO NEGRO T7 HI" data-imagen="img/moder.jpeg">
+                <span class="titulo-item">GUANTE ANTICORTE NEGRO WORKFLEX THIN NEOPRENO NEGRO T7 HI</span>
+                <div class="centered-content"><span> </span><br><span class="codigo"> HPI-35-7NNQ</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/moder.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.3.87</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE NEGRO WORKFLEX THIN NEOPRENO NEGRO T8 HIG" data-imagen="img/moder.jpeg">
+                <span class="titulo-item">GUANTE ANTICORTE NEGRO WORKFLEX THIN NEOPRENO NEGRO T8 HIG</span>
+                <div class="centered-content"><span> </span><br><span class="codigo"> HPI-35-8NNQ</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/moder.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.4.00 </span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>    
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE NYLON NEGRO PU NEGRO PLUREMAX T9 NM" data-imagen="img/guante_neopreno.jpeg">
+                <span class="titulo-item">GUANTE ANTICORTE NYLON NEGRO PU NEGRO PLUREMAX T9 NM</span>
+                <div class="centered-content"><span> </span><br><span class="codigo"> HPI-35-9NNQ</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guante_neopreno.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.4.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>    
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE PLOMO WORKFLEX PU PLOMO T7" data-imagen="img/guante-anticorte.png">
+                <span class="titulo-item">GUANTE ANTICORTE PLOMO WORKFLEX PU PLOMO T7 </span>
+                <div class="centered-content"><span></span><br><span class="talla">35-2PP7</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)  </span></div><br>
+                <img src="img/guante-anticorte.png" alt="" class="img-item">
+                <span class="precio-item">S/.3.24</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE PLOMO WORKFLEX PU PLOMO T8" data-imagen="img/guante-anticorte.png">
+                <span class="titulo-item">GUANTE ANTICORTE PLOMO WORKFLEX PU PLOMO T8</span>
+                <div class="centered-content"><span></span><br><span class="talla">35-2PP8</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/guante-anticorte.png" alt="" class="img-item">
+                <span class="precio-item">S/.3.24</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE DE TRABAJO LIVIANO FORRO NITRILO NEGRO NITRONMAX T8 NM" data-imagen="img/guante max.jpg">
+                <span class="titulo-item">GUANTE DE TRABAJO LIVIANO FORRO NITRILO NEGRO NITRONMAX T8 NM</span>
+                <div class="centered-content"><span></span><br><span class="codigo">1530-8</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guante max.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.7.14</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE DE LATEX NEGRO CALIBRE 25 105G TALLA M" data-imagen="img/guantes_latex.jpeg">
+                <span class="titulo-item">GUANTE DE LATEX NEGRO CALIBRE 25 105G TALLA M</span>
+                <div class="centered-content"><span></span><br><span class="codigo">C25-M</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/guantes_latex.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.9.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE DE JEBE INDUSTRIAL C25 TL" data-imagen="img/handa_06.jpeg">
+                <span class="titulo-item">GUANTE DE JEBE INDUSTRIAL C25 TLL</span>
+                <div class="centered-content"><span></span><br><span class="talla">C25-L</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/guante-chemicla.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.9.04</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE DE JEBE INDUSTRIAL C35 TM" data-imagen="img/handa_06.jpeg">
+                <span class="titulo-item">GUANTE DE JEBE INDUSTRIAL C35 TM</span>
+                <div class="centered-content"><span></span><br><span class="talla">C35-M</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/guante-chemicla.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.10.80</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE PLOMO WORKFLEX THIN NEOPRENO PLOMO T7" data-imagen="img/guante funcional.jpeg">
+                <span class="titulo-item">GUANTE ANTICORTE PLOMO WORKFLEX THIN NEOPRENO PLOMO T7</span>
+                <div class="centered-content"><span class="codigo"> HPI-35-7PPQ</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guante funcional.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.3.87</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE FULL NITRILO NITRIMAX 13 T7 NM" data-imagen="img/guante verde.jpeg">
+                <span class="titulo-item">GUANTE FULL NITRILO NITRIMAX 13" T7 NM</span>
+                <div class="centered-content"><span class="codigo"> HPI-7S11-205</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/guante verde.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.8.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE FULL NITRILO NITRIMAX 13 T9 NM" data-imagen="img/guante verde.jpeg">
+                <span class="titulo-item">GUANTE FULL NITRILO NITRIMAX 13" T9 NM</span>
+                <div class="centered-content"><span class="codigo"> HPI-9S11-205</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guante verde.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.8.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE NYLON PLOMO PU PLOMO PLUREMAX T8 NM" data-imagen="img/guanate plomo.jpg">
+                <span class="titulo-item">GUANTE ANTICORTE NYLON PLOMO PU PLOMO PLUREMAX T8 NM</span>
+                <div class="centered-content"><span class="codigo"> HPI-35-8PPQ</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/guanate plomo.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.4.00</span>
+                <button class="boton-item">Agregar al Carrito</button> 
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE NYLON PLOMO PU PLOMO PLUREMAX T9 NM" data-imagen="img/guanate plomo.jpg">
+                <span class="titulo-item">GUANTE ANTICORTE NYLON PLOMO PU PLOMO PLUREMAX T9 NM</span>
+                <div class="centered-content"><span class="codigo"> HPI-35-9PPQ</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guanate plomo.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.4.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE DE BADANA BLANCO CON RIBETE" data-imagen="img/guante blanco.jpeg">
+                <span class="titulo-item">GUANTE DE BADANA BLANCO CON RIBETE</span>
+                <div class="centered-content"><span> </span><br><span class="codigo"> HPI-198-3B</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guante blanco.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.19.29</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE DE PVC FORRO/LANA NEGRO NEOPLUS 45CM" data-imagen="img/guante neo.jpeg">
+                <span class="titulo-item">GUANTE DE PVC FORRO/LANA NEGRO NEOPLUS 45CM</span>
+                <div class="centered-content"><span></span><span class="Codigo"> HPI-32-2</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guante neo.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.25.81</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE ANTICORTE NARANJA HARDFLEX LATEX NEGRO COMPLETO" data-imagen="img/guantes naranja.jpg">
+                <span class="titulo-item">GUANTE ANTICORTE NARANJA HARDFLEX LATEX NEGRO COMPLETO</span>
+                <div class="centered-content"><span></span><br><span class="Codigo"> HPI-35-NN</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/guantes naranja.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.5.37</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTES DE GOMA CON RASTRILLO DE COLORES VARIOS" data-imagen="img/gon.jpg">
+                <span class="titulo-item">GUANTES DE GOMA CON RASTRILLO DE COLORES VARIOS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo"> HPI-GLOV-1</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)  </span></div><br>
+                <img src="img/gon.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.9.44</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="guantes" data-product-name="GUANTE DE PVC AZUL LONG 55CM" data-imagen="img/guante_estanque.jpeg">
+                <span class="titulo-item">GUANTE DE PVC AZUL LONG 55CM</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">55-AN</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/guante_estanque.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.18.79</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!--------------------------------MASCARILLA PROTECCION X DOCENAS FORSEG-------------------------------------------------------->
+            <div class="item" category="mascarilla" data-product-name="MASCARA MULTIFUNCION 2 VIAS 7500 / MASCARA S/FILTRO" data-imagen="img/mascara 2 vias.png">
+                <span class="titulo-item">MASCARA MULTIFUNCION 2 VIAS 7500 / MASCARA S/FILTRO </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">26-2G-2-SF</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div>
+                <img src="img/mascara 2 vias.png" alt="" class="img-item">
+                <span class="precio-item">S/.31.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="mascarilla" data-product-name="MASCARA MULTIFUNCION CAUCHO 2 VIAS SIN FILTRO" data-imagen="img/sin filtro.jpg">
+                <span class="titulo-item">MASCARA MULTIFUNCION CAUCHO 2 VIAS SIN FILTRO</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">26-2G-1-SF</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)  </span></div><br>
+                <img src="img/sin filtro.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.18.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="mascarilla" data-product-name="MASCARA MULTIFUNCION CAUCHO 2 VIAS 8-F2" data-imagen="img/mascara 6200.png">
+                <span class="titulo-item">MASCARA MULTIFUNCION CAUCHO 2 VIAS 8-F2 </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">CA-1</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div>
+                <img src="img/mascara 6200.png" alt="" class="img-item">
+                <span class="precio-item">S/.42.67</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="mascarilla" data-product-name="MASCARA BLANCA N95 CON VALVULA CERTIFICADA" data-imagen="img/mascarilla con valvula.png">
+                <span class="titulo-item">MASCARA BLANCA N95 CON VALVULA CERTIFICADA </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">44151AP</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/mascarilla con valvula.png" alt="" class="img-item">
+                <span class="precio-item">S/.1.59</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="mascarilla" data-product-name="RESPIRADOR ANTI PARTICULAS REFORZADO SIN VÁLVULA CERTIFICADO NIOSH N95 BLANCO 44150" data-imagen="img/mascarilla con valvula.png">
+                <span class="titulo-item">RESPIRADOR ANTI PARTICULAS REFORZADO SIN VÁLVULA CERTIFICADO NIOSH N95 BLANCO 44150</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">44150AP</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)  </span></div><br>
+                <img src="img/mascarilla-blanca.png" alt="" class="img-item">
+                <span class="precio-item">S/.1.83</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="mascarilla" data-product-name="RETENEDOR COMPATIBBLE 501AD PARA FILTROS 5N11 y 5P71" data-imagen="img/8-F2.png">
+                <span class="titulo-item">RETENEDOR COMPATIBBLE 501AD PARA FILTROS 5N11 y 5P71 </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">7003</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/8-F2.png" alt="" class="img-item">
+                <span class="precio-item">S/.38.78</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="mascarilla" data-product-name="FILTRO CARBON ACTIVO ANTI-PARTICULAS Y VAPOR ORGANICO COMPATIBLE 7600 ADVANCED" data-imagen="img/8-F2.png">
+                <span class="titulo-item">FILTRO CARBON ACTIVO ANTI-PARTICULAS Y VAPOR ORGANICO COMPATIBLE 7600 ADVANCED </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">7001</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/8-F2.png" alt="" class="img-item">
+                <span class="precio-item">S/.27.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="mascarilla" data-product-name="PRE-FITROS Y RETENEDOR PARA PARTICULAS(PARA CARTUCHOS 6003)" data-imagen="img/retenedores-1.jpg">
+                <span class="titulo-item">PRE-FITROS Y RETENEDOR PARA PARTICULAS / PARA CARTUCHOS 6003</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">501-AD</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div>
+                <img src="img/retenedores-1.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.2.85</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="mascarilla" data-product-name="FILTRO PARA PARTICULAS COMPATIBLE GA5N11" data-imagen="img/retenedor.jpg">
+                <span class="titulo-item">FILTRO PARA PARTICULAS COMPATIBLE GA5N11</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5N-11</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/retenedor.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.3.21</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!--------------------------------LENTES PROTECCION X DOCENAS FORSEG-------------------------------------------------------->
+            <div class="item" category="lentes" data-product-name="LENTE CLARO ANTIEMPAÑANTE FILO NEGRO" data-imagen="img/lentes---blancoss (1).jpeg">
+                <span class="titulo-item">LENTE CLARO ANTIEMPAÑANTE FILO NEGRO</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">19-CA</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/lentes---blancoss (1).jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.3.87</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="lentes" data-product-name="LENTES DE SEGURIDAD ANTI EMPAÑANTES LUNA OSCURA" data-imagen="img/lentes-antiempañamiento.webp">
+                <span class="titulo-item">LENTES DE SEGURIDAD ANTI EMPAÑANTES LUNA OSCURA </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">19-O</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/lentes-antiempañamiento.webp" alt="" class="img-item">
+                <span class="precio-item">S/.2.42</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="lentes" data-product-name="LENTE CLARO  FILO NEGRO CERTIFICADOS" data-imagen="img/lente-certificado.png">
+                <span class="titulo-item">LENTE CLARO FILO NEGRO CERTIFICADOS </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">19-CA-N</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/lente-certificado.png" alt="" class="img-item">
+                <span class="precio-item">S/.3.87</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="lentes" data-product-name="LENTE CLARO SPY ANTIEMPAÑANTE" data-imagen="img/lente spy claro.png">
+                <span class="titulo-item">LENTE CLARO SPY ANTIEMPAÑANTE</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">20-4TA</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/lente spy claro.png" alt="" class="img-item">
+                <span class="precio-item">S/.3.87</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="lentes" data-product-name="LENTE DE SOLDAR AUTOMATICO" data-imagen="img/SOLAR.jpg">
+                <span class="titulo-item">LENTE DE SOLDAR AUTOMATICO</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">15-TB</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/SOLAR.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.33.61</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="lentes" data-product-name="LENTE GOOGLE CLARO ANTIFOG" data-imagen="img/antifog.jpg"">
+                <span class="titulo-item">LENTE GOOGLE CLARO ANTIFOG</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">GOG-1</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/antifog.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.6.24</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!--------------------------------CHALECOS SEGURIDAD X DOCENAS FORSEG---------------------------------------------------->
+            <div class="item" category="chalecos"
+                data-product-name="CHALECO DE SEGURIDAD VERDE NYLON 2 BANDAS REFLECTIVAS 120G"
+                data-imagen="img/chalecos de seguridad.jpeg">
+                <span class="titulo-item">CHALECO DE SEGURIDAD VERDE NYLON 2 BANDAS REFLECTIVAS 120G</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">120-CHV</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/chalecos de seguridad.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.6.42 </span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="chalecos"
+                data-product-name="CHALECO DE SEGURIDAD NARANJA NYLON 2 BANDAS REFLECTIVAS 120G"
+                data-imagen="img/chaleco-reflextivo.jpg">
+                <span class="titulo-item">CHALECO DE SEGURIDAD NARANJA NYLON 2 BANDAS REFLECTIVAS 120G </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">120-CHN</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/chaleco-reflextivo.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.5.72</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="chalecos"
+                data-product-name="CHALECO DE SEGURIDAD NARANJA NYLON 2 BANDAS REFLECTIVAS 60G"
+                data-imagen="img/img-naranja.jpg">
+                <span class="titulo-item">CHALECO DE SEGURIDAD NARANJA NYLON 2 BANDAS REFLECTIVAS 60G </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">60-N4</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/img-naranja.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.5.20 </span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="chalecos"
+                data-product-name="CHALECO DE SEGURIDAD NARANJA NYLON 2 BANDAS REFLECTIVAS 60G"
+                data-imagen="img/chaleco-naranja.png">
+                <span class="titulo-item">CHALECO DE SEGURIDAD NARANJA NYLON 2 BANDAS REFLECTIVAS 60G </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">60-N</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/chaleco-naranja.png" alt="" class="img-item">
+                <span class="precio-item">s/.3.85</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+             <div class="item" category="chalecos"
+                data-product-name="CHALECO DE SEGURIDAD VERDE LIMON NYLON 2 BANDAS REFLECTIVAS 120"
+                data-imagen="img/chaleco-nylonxd.jpg">
+                <span class="titulo-item">CHALECO DE SEGURIDAD VERDE LIMON NYLON 2 BANDAS REFLECTIVAS 120</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">120-CHV</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/chaleco-nylonxd.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.5.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="chalecos"
+                data-product-name="CHALECO DE SEGURIDAD VERDE NYLON 2 BANDAS REFLECTIVAS 60G"
+                data-imagen="img/chalecoos.webp">
+                <span class="titulo-item">CHALECO DE SEGURIDAD VERDE NYLON 2 BANDAS REFLECTIVAS 60G</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">60-V</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/chalecoos.webp" alt="" class="img-item">
+                <span class="precio-item">S/.4.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="chalecos"
+                data-product-name="CHALECO DE SEGURIDAD VERDE NYLON 4 BANDAS REFLECTIVAS 60G"
+                data-imagen="img/chalecoos.webp">
+                <span class="titulo-item">CHALECO DE SEGURIDAD VERDE NYLON 4 BANDAS REFLECTIVAS 60G</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">60-V4</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/chalecoos.webp" alt="" class="img-item">
+                <span class="precio-item">S/.6.90</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!--------------------------------VARAS SEGURIDAD X DOCENAS FORSEG---------------------------------------------------->
+            <div class="item" category="varas" data-product-name="VARA LUMINOSA BICOLOR ROJO - AMBAR A PILAS"
+                data-imagen="img/bdmax.jpg">
+                <span class="titulo-item">VARA LUMINOSA BICOLOR ROJO - AMBAR A PILAS </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">42-WY</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/bdmax.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.12.80</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="varas" data-product-name="VARA LUMINOSA BICOLOR ROJO - VERDE A PILAS"
+                data-imagen="img/bdmax.jpg">
+                <span class="titulo-item">VARA LUMINOSA BICOLOR ROJO - VERDE A PILAS </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">42-W</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/bdmax.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.19.99</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="varas" data-product-name="VARA LUMINOSA ROJA A PILAS"
+                data-imagen="img/vara luminosa.jpeg">
+                <span class="titulo-item">VARA LUMINOSA ROJA A PILAS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">42-R</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/vara luminosa.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.16.74</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="varas" data-product-name="VARA-LUMINOSA-ROJO RECARGABLE"
+                data-imagen="img/vara luminosa.jpeg">
+                <span class="titulo-item">VARA-LUMINOSA-ROJO RECARGABLE </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">42-RC</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/vara luminosa.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.35.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="varas" data-product-name="BARRA RETRACTIL AMARILLO/NEGRO 2.10M GRUESA"
+                data-imagen="img/varaamarillo.jpeg">
+                <span class="titulo-item">BARRA RETRACTIL AMARILLO/NEGRO 2.10M GRUESA </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">VARA-RETC</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/varaamarillo.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.21.61</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!--------------------------------LAMPARAS MINERAS X DOCENAS FORSEG-------------------------------------------------->
+            <div class="item" category="lamparas" data-product-name="LAMPARA MINERA ASTRALUX LED SMA RECARGABLE ASKL2M "
+                data-imagen="img/lampara-amar.png">
+                <span class="titulo-item">LAMPARA MINERA ASTRALUX LED SMA RECARGABLE ASKL2M</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">82-2II</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/lampara-amar.png" alt="" class="img-item">
+                <span class="precio-item">S/.115.14</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="lamparas" data-product-name="LAMPARA MINERA ASTRALUX LED SMA RECARGABLE ASKL5M "
+                data-imagen="img/lampara-min.png">
+                <span class="titulo-item">LAMPARA MINERA ASTRALUX LED SMA RECARGABLE ASKL5M</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">82-5II</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/lampara-min.png" alt="" class="img-item">
+                <span class="precio-item">S/.176.42</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!--------------------------------CINTAS DE SEGURIDAD X DOCENAS FORSEG-------------------------------------------------->
+            <div class="item" category="cintas" data-product-name="CINTA ANTIDESLIZANTE 2 18MTS AMARILLA"
+                data-imagen="img/CINTA.png">
+                <span class="titulo-item">CINTA ANTIDESLIZANTE 2 18MTS AMARILLA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">P-5B-A</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/CINTA.png" alt="" class="img-item">
+                <span class="precio-item">S/.54.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA ANTIDESLIZANTE 2 5MTS AMARILLA"
+                data-imagen="img/CINTA.png">
+                <span class="titulo-item">CINTA ANTIDESLIZANTE 2 5MTS AMARILLA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">P-5-5A</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/CINTA.png" alt="" class="img-item">
+                <span class="precio-item">S/.15.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA ANTIDESLIZANTE 2  18MTS NEGRA"
+                data-imagen="img/cinta-negro.png">
+                <span class="titulo-item">CINTA ANTIDESLIZANTE 2 18MTS NEGRA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">P-5B-N</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/cinta-negro.png" alt="" class="img-item">
+                <span class="precio-item">S/.54.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA DE SEÑALIZACION 2 50MTS GRADO INGENIERIA AMARILLO/NEG"
+                data-imagen="img/cinta-colores.png">
+                <span class="titulo-item">CINTA DE SEÑALIZACION 2 50MTS GRADO INGENIERIA AMARILLO/NEG </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5P</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/cinta-colores.png" alt="" class="img-item">
+                <span class="precio-item">S/.40.60</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA ANTIDESLIZANTE 2  18MTS NEGRA LINEA"
+                data-imagen="img/cinta5b.png">
+                <span class="titulo-item">CINTA ANTIDESLIZANTE 2 18MTS NEGRA LINEA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">P-5B-1</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/cinta5b.png" alt="" class="img-item">
+                <span class="precio-item">S/.132.67</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas"
+                data-product-name="CINTA DE SEÑALIZACION AMARRILLA/NEGRO 2 20 MTS"
+                data-imagen="img/cinta5b.png">
+                <span class="titulo-item">CINTA DE SEÑALIZACION AMARRILLA/NEGRO 2 20 MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5P-20</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/cinta5pa.png" alt="" class="img-item">
+                <span class="precio-item">S/.10.76</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas"
+                data-product-name="CINTA SEÑALIZACION AMARILLA/NEGRO 2 33MT"
+                data-imagen="img/cinta5b.png">
+                <span class="titulo-item">CINTA SEÑALIZACION AMARILLA/NEGRO 2" 33MT</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5P-33</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/cinta5pa.png" alt="" class="img-item">
+                <span class="precio-item">S/.23.27</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas"
+                data-product-name="CINTA DE SEÑALIZACION AMARRILLA 2 20 MTS"
+                data-imagen="img/cinta5p.png">
+                <span class="titulo-item">CINTA DE SEÑALIZACION AMARRILLA 2 20 MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5P-20A</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/cinta5p.png" alt="" class="img-item">
+                <span class="precio-item">S/.8.61</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas"
+                data-product-name="CINTA DE SEÑALIZACION 2 50MTS GRADO INGENIERIA AMARILLO"
+                data-imagen="img/cinta20a.png">
+                <span class="titulo-item">CINTA DE SEÑALIZACION 2 50MTS GRADO INGENIERIA AMARILLO</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5P-A</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/cinta20a.png" alt="" class="img-item">
+                <span class="precio-item">S/.46.53</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA DOBLE CONTACTO 3/4 x 33MTS "
+                data-imagen="img/cinta227.jpg">
+                <span class="titulo-item">CINTA DOBLE CONTACTO 3/4 x 33MTS </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">227-33</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/cinta227.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.26.33</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA MIXTA NARANJA 2 100 MTS TELA "
+                data-imagen="img/rallalis.jpg">
+                <span class="titulo-item">CINTA MIXTA NARANJA 2 100 MTS TELA </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5Y-N</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/rallalis.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.79.60</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA MIXTA VERDE 2 100 MTS TELA"
+                data-imagen="img/verdegey.jpg">
+                <span class="titulo-item">CINTA MIXTA VERDE 2 100 MTS TELA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5Y-V</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/verdegey.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.79.60</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas"
+                data-product-name="CINTA MIXTA VERDE LIMÓN ALTERNATIVA 2 100 MTS TELA "
+                data-imagen="img/amarilis.jpeg">
+                <span class="titulo-item">CINTA MIXTA VERDE LIMÓN ALTERNATIVA 2 100 MTS TELA </span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5Y-5VS</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/amarilis.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.79.60</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA AMBAR SELLADA CON LINEAS Y LOGO 10 CM x 45.7"
+                data-imagen="img/naranjis.jpeg">
+                <span class="titulo-item">CINTA REFLECTIVA AMBAR SELLADA CON LINEAS Y LOGO 10 CM x 45.7</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5D-4CHA</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/naranjis.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.308.17</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA ROJO SELLADA CON LINEAS Y LOGO 10 CM x 45.7"
+                data-imagen="img/rojisis.jpeg">
+                <span class="titulo-item">CINTA REFLECTIVA ROJO SELLADA CON LINEAS Y LOGO 10 CM x 45.7</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5D-4CHR</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/rojisis.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.308.17</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA VERDE OSCURO CON LINEAS 2 45.7 MTS"
+                data-imagen="img/verjis.jpeg">
+                <span class="titulo-item">CINTA REFLECTIVA VERDE OSCURO CON LINEAS 2 45.7 MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5D-CHVRI</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/verjis.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.153.80</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA VERDE GRADO DIAMANTE PC EGP 4 45 MTS"
+                data-imagen="img/verjis.jpeg">
+                <span class="titulo-item">CINTA REFLECTIVA VERDE GRADO DIAMANTE PC EGP 4" 45 MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5D-4CHVRIC</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/verjis.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.472.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA VERDE GRADO DIAMANTE PC EGP 2 45 MTS"
+                data-imagen="img/verjis.jpeg">
+                <span class="titulo-item">CINTA REFLECTIVA VERDE GRADO DIAMANTE PC EGP 2" 45 MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5D-CHVRIC</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/verjis.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.253.50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA VERDE OSCURO GRADO DIAMANTE PC EGP 10CM X 45.7MT CORTADA"
+                data-imagen="img/verjis.jpeg">
+                <span class="titulo-item">CINTA REFLECTIVA VERDE OSCURO GRADO DIAMANTE PC EGP 10CM X 45.7MT CORTADA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5D-4PEGP-VRC</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/verjis.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.236.73</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA ROJO/BLANCO SELLADA CON LINEAS Y LOGO 4 45"
+                data-imagen="img/coloris.jpeg">
+                <span class="titulo-item">CINTA REFLECTIVA ROJO/BLANCO SELLADA CON LINEAS Y LOGO 4 45</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5D-4CHRB</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/coloris.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.244.91</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA TEXTIL PLOMA DE 2 100MTS ALTERNATIVA"
+                data-imagen="img/cintatextil.jpg">
+                <span class="titulo-item">CINTA REFLECTIVA TEXTIL PLOMA DE 2 100MTS ALTERNATIVA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5A-5A-A</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/cintatextil.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.180.62</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA TEXTIL PLOMA DE 2 100MTS REFLECTANCIA 420CD/LUX/M2"
+                data-imagen="img/cintatextil.jpg">
+                <span class="titulo-item">CINTA REFLECTIVA TEXTIL PLOMA DE 2" 100MTS REFLECTANCIA 420CD/LUX/M2</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5A-5A-T</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/cintatextil.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.242.87</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="cintas" data-product-name="CINTA REFLECTIVA TEXTIL PLOMA DE 2 100MTS REFLECTANCIA 300CD/LUX/M2"
+                data-imagen="img/cintatextil.jpg">
+                <span class="titulo-item">CINTA REFLECTIVA TEXTIL PLOMA DE 2" 100MTS REFLECTANCIA 300CD/LUX/M2</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">5A-5T</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/cintatextil.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.140.82</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!-------------------------------VINILES X DOCENAS FORSEG------------------------------------------------->
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO AZUL 61CM X 45.7 MTS GRADO INGENIERIA"
+                data-imagen="img/azuls.jpg">
+                <span class="titulo-item">VINIL REFLECTIVO AZUL 61CM X 45.7 MTS GRADO INGENIERIA</span>
+                <div class="centered-content"><span></span><br> <span class="Codigo">61-45AZ</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/azuls.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.540.02</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO AZUL ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7MTS"
+                data-imagen="img/azuls.jpg">
+                <span class="titulo-item">VINIL REFLECTIVO AZUL ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7MTS</span>
+                <div class="centered-content"><span></span><br> <span class="Codigo">8400-AZ</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/azuls.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.5.440.50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL AMARILLO FOSFORESCENTE"
+                data-imagen="img/vinil-amar.png">
+                <span class="titulo-item">VINIL AMARILLO FOSFORESCENTE</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">1044G</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/vinil-amar.png" alt="" class="img-item">
+                <span class="precio-item">S/.271.96</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO AMARILLO ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7MTS"
+                data-imagen="img/vinil-amar.png">
+                <span class="titulo-item">VINIL REFLECTIVO AMARILLO ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">8400-A</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/vinil-amar.png" alt="" class="img-item">
+                <span class="precio-item">S/.5.440.50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL DE PLOTEO ALTO BRILLO 0.61X45.7M NARANJA 0.08MM" data-imagen="img/14-95g.png">
+                <span class="titulo-item">VINIL DE PLOTEO ALTO BRILLO 0.61X45.7M NARANJA 0.08MM</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">1495G</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/14-95g.png" alt="" class="img-item">
+                <span class="precio-item">S/.216.06</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO ROJO 61CM X 45.7 MTS GRADO INGENIERIA" data-imagen="img/TUBO.webp">
+                <span class="titulo-item">VINIL REFLECTIVO ROJO 61CM X 45.7 MTS GRADO INGENIERIA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">61-45N</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/TUBO.webp" alt="" class="img-item">
+                <span class="precio-item">S/.539.99</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO ROJO 61CM X 45.7 MTS GRADO INGENIERIA" data-imagen="img/mohomoho.jpg">
+                <span class="titulo-item">VINIL REFLECTIVO ROJO 61CM X 45.7 MTS GRADO INGENIERIA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">61-45R</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/mohomoho.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.540.02</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO ROJO ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7MTS" data-imagen="img/mohomoho.jpg">
+                <span class="titulo-item">VINIL REFLECTIVO ROJO ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">8400-RI </span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/mohomoho.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.5.440.50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="FLECTIVO VERDE 61CM X 45.7 MTS GRADO INGENIERIA" data-imagen="img/nasa.jpg">
+                <span class="titulo-item">FLECTIVO VERDE 61CM X 45.7 MTS GRADO INGENIERIA</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">61-45V</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/nasa.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.539.99</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO VERDE ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7MT" data-imagen="img/nasa.jpg">
+                <span class="titulo-item">VINIL REFLECTIVO VERDE ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7MT</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">8400-V</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/nasa.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.5.440.50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO VERDE GRADO DIAMANTE PC EGP 122CM X 45.7MTS" data-imagen="img/foca.jpg">
+                <span class="titulo-item">VINIL REFLECTIVO VERDE GRADO DIAMANTE PC EGP 122CM X 45.7MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">47-VPC</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/foca.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.4.959.50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL TRANSPARENTE DE SUBLIMACIÓN 1.20X100MTS" data-imagen="img/vinilblanco.png">
+                <span class="titulo-item">VINIL TRANSPARENTE DE SUBLIMACIÓN 1.20X100MTS</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">DSP90TP</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/vinilblanco.png" alt="" class="img-item">
+                <span class="precio-item">S/.239.98</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO BLANCO ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7M" data-imagen="img/vinilblanco.png">
+                <span class="titulo-item">VINIL REFLECTIVO BLANCO ACRILICO - ALTA REFLECTIVIDAD 122CM X 45.7M</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">8400-B</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/vinilblanco.png" alt="" class="img-item">
+                <span class="precio-item">S/.5.440.50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL DE PLOTEO ALTO BRILLO 0.61X50M GOLDEN BRUSHED 0.08MM TIPO METAL" data-imagen="img/dorado.jpg">
+                <span class="titulo-item">VINIL DE PLOTEO ALTO BRILLO 0.61X50 GOLDEN BRUSHED 0.08MM TIPO METAL</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">3101-DB</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/dorado.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.392.47</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL DE PLOTEO ALTO BRILLO 0.61X50M SILVER BRUSHED 0.08MM TIPO METAL" data-imagen="img/plat.jpg">
+                <span class="titulo-item">VINIL DE PLOTEO ALTO BRILLO 0.61X50M SILVER BRUSHED 0.08MM TIPO METAL</span>
+                <div class="centered-content"><span></span><br><span class="Codigo">3006-PC</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/plat.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.392.47</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL FIBRA CARBONO 120G 1.52 x 30M Negro 0.12MM 3D " data-imagen="img/VINILNEGRO.png">
+                <span class="titulo-item">VINIL FIBRA CARBONO 120G 1.52 x 30M Negro 0.12MM 3D </span><br>
+                <div class="centered-content"><span class="Codigo">QD1201</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/VINILNEGRO.png" alt="" class="img-item">
+                <span class="precio-item">S/.599.95</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL FIBRA CARBONO 120G 1.52 x 30M Negro 0.12MM 2D " data-imagen="img/VINILSUPERNEGRO.png">
+                <span class="titulo-item">VINIL FIBRA CARBONO 120G 1.52 x 30M Negro 0.12MM 2D </span><br>
+                <div class="centered-content"><span class="Codigo">QD1301</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/VINILSUPERNEGRO.png" alt="" class="img-item">
+                <span class="precio-item">S/.674.96</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL DE IMPRESIÓN AUTOADHESIVO BLANCO 1.27*50M 100MIC 140GM" data-imagen="img/VINILTRANS.png">
+                <span class="titulo-item">VINIL DE IMPRESIÓN AUTOADHESIVO BLANCO 1.27*50M 100MIC 140GM</span><br>
+                <div class="centered-content"><span class="Codigo">3010M</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/VINILTRANS.png" alt="" class="img-item">
+                <span class="precio-item">S/.434.98</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL DE IMPRESIÓN AUTOADHESIVO BLANCO 1.52*50M 100MIC 140GM " data-imagen="img/VINILSUPERTRANS.png">
+                <span class="titulo-item">VINIL DE IMPRESIÓN AUTOADHESIVO BLANCO 1.52*50M 100MIC 140GM </span><br>
+                <div class="centered-content"><span class="Codigo">3010L</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/VINILSUPERTRANS.png" alt="" class="img-item">
+                <span class="precio-item">S/.509.99</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL DE IMPRESIÓN AUTOADHESIVO TRANSPARENTE 1.27*50M 100MIC 120GM" data-imagen="img/VINILMEGATRANS.png  ">
+                <span class="titulo-item">VINIL DE IMPRESIÓN AUTOADHESIVO TRANSPARENTE 1.27*50M 100MIC 120GM </span><br>
+                <div class="centered-content"><span class="Codigo">3113</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/VINILMEGATRANS.png" alt="" class="img-item">
+                <span class="precio-item">S/.442.52</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO ROJO GRADO DIAMANTE EGP 122CM X 45.7MTS" data-imagen="img/reflexivo.webp">
+                <span class="titulo-item">VINIL REFLECTIVO ROJO GRADO DIAMANTE EGP 122CM X 45.7MTS </span><br>
+                <div class="centered-content"><span class="Codigo">47-RPC</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/reflexivo.webp" alt="" class="img-item">
+                <span class="precio-item">S/.4.959.50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="viniles" data-product-name="VINIL REFLECTIVO NEGRO 122CM X 45.7MTS GRADO INGENIERIA" data-imagen="img/vini-negro.jpg">
+                <span class="titulo-item">VINIL REFLECTIVO NEGRO 122CM X 45.7MTS GRADO INGENIERIA</span><br>
+                <div class="centered-content"><span class="Codigo">122-45NG</span><br><span class="Codigo">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/vini-negro.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.1.040.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!------------------------------CARETAS X DOCENAS FORSEG------------------------------------------------------>
+            <div class="item" category="caretas" data-product-name="CARETA AMARILLA ABS CON MICA POLICARBONATO" data-imagen="img/13.png">
+                <span class="titulo-item">CARETA AMARILLA ABS CON MICA POLICARBONATO</span><br>
+                <div class="centered-content"><span></span><br><span class="codigo">13</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/13.png" alt="" class="img-item">
+                <span class="precio-item">S/.17.97</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="caretas" data-product-name="BARBIQUEJO PARA CASCO" data-imagen="img/barba.jpeg">
+                <span class="titulo-item">BARBIQUEJO PARA CASCO</span><br>
+                <div class="centered-content"><span></span><br><span class="codigo">111</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div><br>
+                <img src="img/barba.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.1.22</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="caretas" data-product-name="ADAPTADOR DE CASCO ABS PARA MICA O MALLA" data-imagen="img/13-t.png">
+                <span class="titulo-item">ADAPTADOR DE CASCO ABS PARA MICA O MALLA</span><br>
+                <div class="centered-content"><span></span><br><span class="codigo">13-T</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS)</span></div>
+                <img src="img/13-t.png" alt="" class="img-item">
+                <span class="precio-item">S/.9.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>    
+            <div class="item" category="caretas" data-product-name="MICA DE POLICARBONATO PARA CLIP O CARETA" data-imagen="img/mica.jpg">
+                <span class="titulo-item">MICA DE POLICARBONATO PARA CLIP O CARETA</span><br>
+                <div class="centered-content"><span></span><br><span class="codigo">13-L</span><br><span class="talla">DOCENA / UNIDAD (MAYORISTAS) </span></div><br>
+                <img src="img/mica.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.8.40</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>  
+            <!------------------------------PRODUCTOS ADICIONALES X DOCENAS FORSEG ------------------------------------------------>
+            <div class="item" category="adicionales" data-product-name="ALFOMBRA DE PARED" data-imagen="img/al.jpeg">
+                <span class="titulo-item">ALFOMBRA DE PARED</span><br>
+                <div class="centered-content"><span class="Codigo">555</span></div><br>
+                <img src="img/al.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.624.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="PISO PVC PISO MOJADO" data-imagen="img/piso.png">
+                <span class="titulo-item">PISO PVC PISO MOJADO</span><br>
+                <div class="centered-content"><span class="Codigo">PISO-MOJ</span></div><br>
+                <img src="img/piso.png" alt="" class="img-item">
+                <span class="precio-item">S/.20.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="DUCHA ELECTRICA COMPLETA" data-imagen="img/ducha.jpeg">
+                <span class="titulo-item">DUCHA ELECTRICA COMPLETA</span><br>
+                <div class="centered-content"><span class="Codigo">DUC-ELE</span></div><br>
+                <img src="img/ducha.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.848.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="FILTRO PARA GASES" data-imagen="img/FILTRADO.jpg">
+                <span class="titulo-item">FILTRO PARA GASES</span><br>
+                <div class="centered-content"><span class="Codigo">2097</span></div><br>
+                <img src="img/FILTRADO.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.20.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="FILTRO ANTI-PARTICULAS 2001 COMPATIBLE 7600 ADVANCED" data-imagen="img/FILTRADO.jpg">
+                <span class="titulo-item">FILTRO ANTI-PARTICULAS 2001 COMPATIBLE 7600 ADVANCED</span><br>
+                <div class="centered-content"><span class="Codigo">2001</span></div><br>
+                <img src="img/FILTRADO.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.22.24</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="FILTRO ANTI-VAPOR ORGANICO 2007 COMPATIBLE 7600 A" data-imagen="img/FILTRADO.jpg">
+                <span class="titulo-item">FILTRO ANTI-VAPOR ORGANICO 2007 COMPATIBLE 7600 A</span><br>
+                <div class="centered-content"><span class="Codigo">2007</span></div><br>
+                <img src="img/FILTRADO.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.26.33</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="FOCO LED 50 WATT" data-imagen="img/foco.jpeg">
+                <span class="titulo-item">FOCO LED 50 WATT</span><br>
+                <div class="centered-content"><span class="Codigo">FOC-50W</span></div><br>
+                <img src="img/foco.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.27.20</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="adicionales" data-product-name="FOTOLUMINICENTE 30X20 STIKER" data-imagen="img/gtpp.jpg">
+                <span class="titulo-item">FOTOLUMINICENTE 30X20 STIKER</span><br>
+                <div class="centered-content"><span class="Codigo">AS-CEL-3</span></div><br>
+                <img src="img/gtpp.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.7.80</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>     
+            <div class="item" category="adicionales" data-product-name="OREJERA DE SEGURIDAD ADAPTABLE PARA CASCO" data-imagen="img/ore1.jpg">
+                <span class="titulo-item">OREJERA DE SEGURIDAD ADAPTABLE PARA CASCO</span><br>
+                <div class="centered-content"><span class="Codigo">OREJ-PN1</span></div><br>
+                <img src="img/ore1.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.36.54</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>  
+            <div class="item" category="adicionales" data-product-name="OREJERA DE SEGURIDAD SOBRE CABEZA REGULABLE" data-imagen="img/ore2.jpg">
+                <span class="titulo-item">OREJERA DE SEGURIDAD SOBRE CABEZA REGULABLE</span><br>
+                <div class="centered-content"><span class="Codigo">OREJ-PN2</span></div><br>
+                <img src="img/ore2.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.36.54</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="adicionales" data-product-name="PISTOLA CALEFACION ESQUELETO" data-imagen="img/pisola.jpg">
+                <span class="titulo-item">PISTOLA CALEFACION ESQUELETO</span><br>
+                <div class="centered-content"><span class="Codigo"> HPCL-TR-17550</span></div><br>
+                <img src="img/pisola.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.10.22</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="adicionales" data-product-name="PORTA PLACA METALICA PUMA" data-imagen="img/bateria.jpg">
+                <span class="titulo-item">PORTA PLACA METALICA PUMA</span><br>
+                <div class="centered-content"><span class="Codigo"> HPCL-SF-N30153</span></div><br>
+                <img src="img/bateria.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.19.87</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="adicionales" data-product-name="RIBETE REFLECTIVO X 100 MTS" data-imagen="img/cili.jpg">
+                <span class="titulo-item">RIBETE REFLECTIVO X 100 MTS</span><br>
+                <div class="centered-content"><span class="Codigo">RIB-100</span></div><br>
+                <img src="img/cili.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.28.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="adicionales" data-product-name="SHISHA DE PASTILLAS" data-imagen="img/shisha.jpg">
+                <span class="titulo-item">SHISHA DE PASTILLAS</span><br>
+                <div class="centered-content"><span class="Codigo">777-P</span></div><br>
+                <img src="img/shisha.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.241.61</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> 
+            <div class="item" category="adicionales" data-product-name="TAPONCITOS DE OIDO EN ESTUCHE RECTANGULAR" data-imagen="img/tapones-para-oido.jpeg">
+                <span class="titulo-item">TAPONCITOS DE OIDO EN ESTUCHE RECTANGULAR</span><br>
+                <div class="centered-content"><span class="Codigo">130-CA-R</span></div><br>
+                <img src="img/tapones-para-oido.jpeg" alt="" class="img-item">
+                <span class="precio-item">S/.1.74</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="PANEL DE ALUMINIO 5MM 0,35MM - NEGRO MATE" data-imagen="img/black.jpg">
+                <span class="titulo-item">PANEL DE ALUMINIO 5MM 0,35MM - NEGRO MATE</span><br>
+                <div class="centered-content"><span class="Codigo">SUB-5NM</span></div><br>
+                <img src="img/black.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.374.88</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="PANEL DE ALUMINIO 4MM 0,30 MM - NEGRO MATE" data-imagen="img/black.jpg">
+                <span class="titulo-item">PANEL DE ALUMINIO 4MM 0,30 MM - NEGRO MATE</span><br>
+                <div class="centered-content"><span class="Codigo">SUB-4NM</span></div><br>
+                <img src="img/black.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.285.74</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item" category="adicionales" data-product-name="PANEL DE ALUMINIO 3MM 0,18 MM - NEGRO MATE" data-imagen="img/black.jpg">
+                <span class="titulo-item">PANEL DE ALUMINIO 3MM 0,18 MM - NEGRO MATE</span><br>
+                <div class="centered-content"><span class="Codigo">SUB-3NM</span></div><br>
+                <img src="img/black.jpg" alt="" class="img-item">
+                <span class="precio-item">S/.220.47</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+        </div>
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+            <div class="carrito-items">     
+            </div>
+            <script>
+                function agregarAlCarrito(productoDiv) {
+                    const nombre = productoDiv.dataset.productName;
+                    const cantidadSeleccionada = parseInt(prompt('Ingrese la cantidad deseada:', '1'));
+                    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                    const productoExistente = carrito.find(producto => producto.nombre === nombre);
+                    if (productoExistente) {
+                        productoExistente.cantidad += cantidadSeleccionada;
+                    } else {
+                        const precio = parseFloat(productoDiv.querySelector(".precio-item").textContent.replace("S/.", ""));
+                        const imagen = productoDiv.dataset.imagen;
+                        const producto = {
+                            nombre: nombre,
+                            precio: precio,
+                            imagen: imagen,
+                            cantidad: cantidadSeleccionada
+                        };
+                        carrito.push(producto);
+                    }
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                    window.location.href = 'factura.html';
+                }
+                const botonesAgregarCarrito = document.querySelectorAll('.item button');
+                botonesAgregarCarrito.forEach(boton => {
+                    boton.addEventListener('click', function () {
+                        agregarAlCarrito(this.closest(".item"));
+                    });
+                });
+            </script> 
+             <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $00.000,00
+                    </span>
+                </div>         
+                <div class="fila">
+                    <a href="http://127.0.0.1:5500/Pagina%20Forseg/factura.html"
+                        class="btn-pagar">Finalizar Compra <i class="fa-solid fa-bag-shopping"></i></a>
+                </div>         
+            </div>    
+        </div>
+    </section>
+        
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+
+</html>
+
+
+
+

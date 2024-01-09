@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="botlogo.png" type="image/x-icon">
+  <title>BOT FORSEG</title>
+  <link rel="stylesheet" href="bot.css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Página web de FORSEG, ofrece productos de alta calidad.">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!--Barra de Navegación de la pagina BOT-->
+
+  <button class="button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample">
+    !PRESIONA AQUI!
+  </button>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">FORSEG</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        Se encuentra en la página de nuestro amigo Matxin🤖. En el siguiente Menú puede dirigirse a nuestas opciones de
+        manera más rápida y fácil.<br><b>Atte.Forseg 🦺🧡🤜🤛.</b>
+      </div>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown">
+          Elige tu opción
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="index.html">Inicio</a></li>
+          <li><a class="dropdown-item" href="categoria.html">Categorías</a></li>
+          <li><a class="dropdown-item" href="cotizar.html">Cotizar</a></li>
+          <li><a class="dropdown-item" href="productos.html">Productos</a></li>
+          <li><a class="dropdown-item" href="orders.html">Cajas</a></li>
+          <li><a class="dropdown-item" href="dozens.html">Doscenas</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!--Cuadros de imagen de información para el BOT-->
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="border: 2px solid #dd5c11;">
+        <img src="booot.gif" class="card-img-top centered-image" alt="...">
+        <div class="card-body">
+          <h5>INFORMACIÓN SOBRE MATXIN</h5>
+          <p class="card-text">Soy Matxin, he sido creado para darte soporte en nuestra página web. Mis preguntas y
+            respuestas son <strong>limitadas.</strong> Espero poder ayudarte de la mejor manera.
+            Para empezar, debes presionarme en la parte inferior derecha.🤖🦺🧡.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card" style="border: 2px solid #dd5c11;">
+        <img src="info.gif" class="card-img-top centered-image" alt="...">
+        <div class="card-body">
+          <br>  
+          <h5 class="card-title">INFORMACIÓN DE LA PAGINA POR MATXIN</h5>
+          <p class="card-text">Nuestra página fue hecha para que sea cómodo y se sienta familiarizado con nosotros. Lo
+            que puede encontrar son nuestras <strong>CATEGORÍAS</strong> nuestras <strong>COTIZACIONES</strong> y
+            diferentes maneras de poder obtener nuestro productos ya sean por <strong>DOCENAS Y CAJAS</strong>🤖🦺🧡
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Inicio del BOT-->
+
+  <div id="floating-button" onclick="toggleChat()">
+    <img src="giphy (1).gif" alt="Bot Forseg">
+  </div>
+  <div id="chat-container" class="hidden">
+    <div id="close-button" onclick="closeChat()">X</div>
+    <div id="chat-output"></div>
+    <div id="exit-gif-container" class="hidden">
+      <img src="despedida.gif" alt="Gif al salir" id="exit-gif">
+    </div>
+    <input type="text" id="user-input" placeholder="Escribe algo...">
+    <div id="button" onclick="sendMessage()">Enviar</div>
+  </div>
+
+  <!--Inicio de COPYRIGHT-->
+
+  <div class="copyright">
+    <p>
+      <strong>&copy; Todo los derechos reservados por la empresa FORSEG</strong>
+    </p>
+  </div>
+
+  <script src="bot.js"></script>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

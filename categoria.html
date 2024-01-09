@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="img/empresa forsegg.jpg" type="image/x-icon">
+	<title>Categoria</title>
+	<link rel="stylesheet" href="js/categoria.css" />
+	<link rel="stylesheet" href="index.html" />
+	<link rel="stylesheet" href="nosotros.html">
+	<script src="js/categoria.js" type="module"></script>
+	<script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body style="background-color: #F5EEF8"> </body>
+<body>
+	<header>
+		<div class="header-top">
+			<div class="logo">
+				<h2>
+					<a href="index.html" class="logo-link">FORSEG</a>
+				</h2>
+			</div>
+			<nav class="top-nav">
+				<ul>
+					<li><a href="index.html">INICIO</a></li>
+					<li><a href="categoria.html">CATEGORIA</a></li>
+					<li><a href="nosotros.html">NOSOTROS</a></li>
+					<li><a href="productos.html">PRODUCTOS</a></li>
+					<li><a href="cotizar.html">COTIZAR</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="container-items">
+		<div class="item">
+			<figure>
+				<img src="img/lenete.jpg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>LENTE CLARO FILO NEGRO CERTIFICADOS</h2>
+				<p class="price"></p>
+				<button id="addToCartButton">Ver</button>
+			</div>
+			<script>
+				var addToCartButton = document.getElementById("addToCartButton");
+				addToCartButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/mascarilla-multifuncional.jpeg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>MASCARA MULTIFUNCION 2 VIAS 6200 CON FILTRO</h2>
+				<p class="price"></p>
+				<button id="masButton">Ver</button>
+			</div>
+
+			<script>
+				var masButton = document.getElementById("masButton");
+				masButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/taponcito de oido.jpg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>TAPON DE OIDO REHUSABLE 3 CONOS </h2>
+				<p class="price"></p>
+				<button id="tapButton">Ver</button>
+			</div>
+			<script>
+				var tapButton = document.getElementById("tapButton");
+				tapButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/mascarillaa.jpeg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>MASCARILLA REUSABLE CON DOBLE FILTRO </h2>
+				<p class="price"></p>
+				<button id="mascaraButton">Ver</button>
+			</div>
+			<script>
+				var mascaraButton = document.getElementById("mascaraButton");
+				mascaraButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/chalecos de seguridad.jpeg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>CHALECO REFLECTANTE DE ALTA VISIVILIDAD</h2>
+				<p class="price"></p>
+				<button id="chalButton">Ver</button>
+			</div>
+			<script>
+				var chalButton = document.getElementById("chalButton");
+				chalButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/cinta de señalizacion.jpeg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>CINTA DE SEÑALIZACION AMARILLA CON NEGRO</h2>
+				<p class="price"></p>
+				<button id="cintaButton">Ver</button>
+			</div>
+			<script>
+				var cintaButton = document.getElementById("cintaButton");
+				cintaButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/guantes anticorte.jpeg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>GUANTE ANTICORTE NIVEL 4 PORTWEST A621 PACK </h2>
+				<p class="price"></p>
+				<button id="guantesButton">Ver</button>
+			</div>
+			<script>
+				var guantesButton = document.getElementById("guantesButton");
+				guantesButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/cono pvc.jpeg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>CONO DE SEGURIDAD PVC 70CM 28" C/CINTA LIVIANO</h2>
+				<p class="price"></p>
+				<button id="conoButton">Ver</button>
+			</div>
+			<script>
+				var conoButton = document.getElementById("conoButton");
+				conoButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/piso mojado.jpeg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>TABLERO DE PRECAUCION PISO MOJADO</h2>
+				<p class="price"></p>
+				<button id="pisButton">Ver</button>
+			</div>
+			<script>
+				var pisButton = document.getElementById("pisButton");
+				pisButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/cartucho organicos.jpeg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>CARTUCHO 3M 6003 CONTRA GASES ACIDOS</h2>
+				<p class="price"></p>
+				<button id="orgaButton">Ver</button>
+			</div>
+			<script>
+				var orgaButton = document.getElementById("orgaButton");
+				orgaButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/gt.webp" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>VARA-LUMINOSA-BICOLOR A PILAS</h2>
+				<p class="price"></p>
+				<button id="lumButtom">Ver</button>
+			</div>
+			<script>
+				var lumButton = document.getElementById("lumButtom");
+				lumButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="img/Vinilos.jpg" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>PLOTEO CORTE TROQUELADO VINILES</h2>
+				<p class="price"></p>
+				<button id="vinButton">Ver</button>
+			</div>
+			<script>
+				var vinButton = document.getElementById("vinButton");
+				vinButton.addEventListener("click", function () {
+					window.open("productos.html", "_self");
+				});
+			</script>
+		</div>
+	</div>
+	<script src="index.js"></script>
+</body>
+
+</html>
